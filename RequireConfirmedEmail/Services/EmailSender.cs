@@ -27,6 +27,7 @@ namespace RequireConfirmedEmail.Services
             {
                 // Credentials
                 var credentials = new NetworkCredential(_emailSettings.Sender, _emailSettings.Password);
+                
 
                 // Mail message
                 var mail = new MailMessage()
@@ -58,7 +59,6 @@ namespace RequireConfirmedEmail.Services
                 // TODO: handle exception
                 throw new InvalidOperationException(ex.Message);
             }
-
             return Task.CompletedTask;
         }
     }
